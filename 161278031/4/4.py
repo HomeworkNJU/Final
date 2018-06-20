@@ -29,7 +29,7 @@ def analyze(s):
                     break
     for i in range(0,len(s)):
         if(s[i]=='+' or s[i]=='-'):
-            for j in range(i-1,0,-1):
+            for j in range(i-1,-1,-1):
                 if(s[j].isdigit()):
                     out.append(int(s[j]))
                     break
