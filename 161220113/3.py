@@ -18,8 +18,8 @@ sum=0
 for i in range(0,len(time)):
     if(buyelse[i]==1):
         pricenow=0
-        for j in range(0,len(time2)+1):
-            if(time[i]>=time2[j] and ((time[i]<time2[j+1]) or i==len(time2))):
+        for j in range(0,len(time2)-1):
+            if(time[i]>=time2[j] and ((time[i]<time2[j+1]) or j==len(time2))):
                 pricenow=price[j]
         yongjin=pricenow*100*num[i]*0.002
         if(yongjin<5):
@@ -30,8 +30,8 @@ for i in range(0,len(time)):
         sum=sum-money
     elif(buyelse[i]==2):
         pricenow=0
-        for j in range(0,len(time2)):
-            if(time[i]>=time2[j] and ((time[i]<time2[j+1]) or i==len(time2))):
+        for j in range(0,len(time2)-1):
+            if(time[i]>=time2[j] and ((time[i]<time2[j+1]) or j==len(time2))):
                 pricenow=price[j]
         yongjin=pricenow*100*num[i]*0.002
         if(yongjin<5):
