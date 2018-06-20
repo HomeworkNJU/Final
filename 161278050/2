@@ -1,0 +1,53 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jun 20 10:26:14 2018
+
+@author: 张旭
+"""
+
+num = int(input("人数"))
+time_list = []
+time = input()
+time_split = time.split()
+for i in range(num):
+    time_list.append(int(time_split[i]))
+sum1 = 0
+wait1 = []
+wait1.append(0)
+wait1.append(0)
+wait1.append(0)
+for i in range(3,num):
+    wait1.append(time_list[i-3] +wait1[i-3])
+w1 = sum(wait1)
+time_last1 = []
+time_last1.append(wait1[num-3] + time_list[num-3])
+time_last1.append(wait1[num-2] + time_list[num-2])
+time_last1.append(wait1[num-1] + time_list[num-1])
+t1 = max(time_last1)
+print(w1,t1)
+time_gui = []
+time_gui.append(time_list[0])
+time_gui.append(time_list[1])
+time_gui.append(time_list[2])
+wait2 = []
+gui_sum = []
+gui_sum.append(time_list[0])
+gui_sum.append(time_list[1])
+gui_sum.append(time_list[2])
+wait2.append(0)
+wait2.append(0)
+wait2.append(0)
+for i in range(3,num):
+    for j in range(3):
+        time_gui[j] = time_gui[j] - min(time_gui)
+    for j in range(3):
+        if time_gui[j] == 0:
+            time_gui[j] =time_list[i]
+            wait2.append(gui_sum[j])
+            gui_sum[j] = gui_sum[j] +time_list[i]
+            break
+    
+t2 = max(gui_sum)
+w2 = sum(wait2)
+print(w2,t2)
+

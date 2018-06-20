@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jun 20 11:28:04 2018
+
+@author: 张旭
+"""
+
+a = input()
+a_split = a.split()
+n =int(a_split[0])
+p =int(a_split[1])
+b = input()
+b_split = b.split()
+sit = []
+for i in range(n):
+    sit.append(int(b_split[i]))
+for i in range(p):
+    

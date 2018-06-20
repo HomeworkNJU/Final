@@ -1,0 +1,13 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jun 20 10:06:46 2018
+
+@author: 张旭
+"""
+a = int(input("输入a:"))
+b = int(input("输入b:"))
+print('{:-5d}'.format(a))
+print('{:-5d}'.format(b))
+c = a * b
+print('-----')
+print('{:-5d}'.format(c))
